@@ -9,7 +9,7 @@ const purepass = new Purepass();
 inquirer
     .prompt([{
             name: 'secret',
-            type: 'password',
+            type: 'input',
             message: 'what is your secret?',
             validate(secret) {
                 return !!secret.length;
