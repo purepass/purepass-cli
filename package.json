@@ -1,0 +1,25 @@
+{
+  "name": "purepass-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/purepass/purepass-cli.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/purepass/purepass-cli/issues"
+  },
+  "homepage": "https://github.com/purepass/purepass-cli#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "inquirer": "^6.2.1",
+    "purepass-core": "^1.0.2"
+  }
+}
