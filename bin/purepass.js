@@ -1,4 +1,4 @@
-
+#!/usr/bin/env node
 const { Purepass, PurepassOptions } = require('purepass-core');
 const commandLineArgs = require('command-line-args');
 const runInteractive = require('../lib/interactive');
