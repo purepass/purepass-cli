@@ -7,6 +7,10 @@
     "start": "node index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "purepass-generate": "./bin/purepass.js"
+  },
+  "preferGlobal": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/purepass/purepass-cli.git"
@@ -19,6 +23,7 @@
   "homepage": "https://github.com/purepass/purepass-cli#readme",
   "dependencies": {
     "chalk": "^2.4.1",
+    "command-line-args": "^5.0.2",
     "inquirer": "^6.2.1",
     "purepass-core": "^1.0.2"
   }
