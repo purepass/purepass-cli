@@ -1,14 +1,14 @@
 {
-  "name": "purepass-cli",
-  "version": "1.1.0",
+  "name": "purepass",
+  "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./bin/purepass.js",
   "scripts": {
-    "start": "node index",
+    "start": "node ./bin/purepass",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "purepass-generate": "./bin/purepass.js"
+    "purepass": "./bin/purepass.js"
   },
   "preferGlobal": true,
   "repository": {

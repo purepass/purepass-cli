@@ -3,5 +3,5 @@
 ## usage
 
 ```
-npx purepass-cli
+npx purepass -i
 ```
