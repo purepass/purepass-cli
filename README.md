@@ -7,7 +7,7 @@ for an interactive password generation experience:
 npx purepass -i
 ```
 
-for a one liner you can use 
+for a one liner you can use:
 ```
 npx purepass -s someSuperSecret123 -n fb
 ```
