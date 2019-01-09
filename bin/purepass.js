@@ -36,8 +36,20 @@ const options = commandLineArgs(optionDefinitions);
 if(options.interactive) {
     runInteractive();
 } else {
-    const {secret, namespace, specialCharacter, maxPasswordLength} = options;
+    const {
+        secret,
+        namespace,
+        specialCharacter,
+        maxPasswordLength
+    } = options;
+    if(!secret) {
+        runInteractive();
+        return;
+    }
     const purepassOptions = new PurepassOptions(namespace, specialCharacter, maxPasswordLength);
     const generatedPassword = purepass.generatePassword(secret, purepassOptions);
+    if(!generatedPassword) {
+        throw new Error('Failed to generate password');
+    }
     print(generatedPassword);
 }
