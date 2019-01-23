@@ -23,11 +23,13 @@ const optionDefinitions = [{
     },
     {
         name: 'maxPasswordLength',
-        type: Number
+        type: Number,
+        alias: 'l'
     },
     {
         name: 'specialCharacter',
-        type: String
+        type: String,
+        alias: 'c'
     }
 ];
 
