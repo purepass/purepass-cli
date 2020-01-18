@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const { Purepass, PurepassOptions } = require('purepass-core');
 const commandLineArgs = require('command-line-args');
+const copyPassword = require('clipboardy').writeSync;
 const runInteractive = require('../lib/interactive');
 const print = require('../lib/printer');
 const purepass = new Purepass();
@@ -8,7 +9,7 @@ const purepass = new Purepass();
 const optionDefinitions = [{
         name: 'interactive',
         type: Boolean,
-        alias: 'i'
+        alias: 'i',
     },
     {
         name: 'secret',
@@ -30,6 +31,12 @@ const optionDefinitions = [{
         name: 'specialCharacter',
         type: String,
         alias: 'c'
+    },
+    {
+        name: 'copyToClipboard',
+        type: Boolean,
+        alias: 'p',
+        defaultOption: false
     }
 ];
 
@@ -42,7 +49,8 @@ if(options.interactive) {
         secret,
         namespace,
         specialCharacter,
-        maxPasswordLength
+        maxPasswordLength,
+        copyToClipboard
     } = options;
     if(!secret) {
         runInteractive();
@@ -52,6 +60,9 @@ if(options.interactive) {
     const generatedPassword = purepass.generatePassword(secret, purepassOptions);
     if(!generatedPassword) {
         throw new Error('Failed to generate password');
+    }
+    if(copyToClipboard) {
+        copyPassword(generatedPassword);
     }
     print(generatedPassword);
 }
