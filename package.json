@@ -23,6 +23,7 @@
   "homepage": "https://github.com/purepass/purepass-cli#readme",
   "dependencies": {
     "chalk": "^2.4.1",
+    "clipboardy": "^2.1.0",
     "command-line-args": "^5.0.2",
     "inquirer": "^6.2.1",
     "purepass-core": "^5"
