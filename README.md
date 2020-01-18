@@ -20,7 +20,7 @@ Fb06#356efc68a3516973780bc826c59fcd4c7f22291708c29b0d557495177e
 
 purepass is a pure function, the resulting password will always be the same if the same arguments are passed in.
 
-## The fastest way
+## The best way
 
 ```
 npx purepass someSuperSecret123 -n fb -q
