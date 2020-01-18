@@ -35,9 +35,13 @@ const optionDefinitions = [{
     {
         name: 'copyToClipboard',
         type: Boolean,
-        alias: 'p',
-        defaultOption: false
-    }
+        alias: 'p'
+    },
+    {
+        name: 'quiet',
+        type: Boolean,
+        alias: 'q'
+    },
 ];
 
 const options = commandLineArgs(optionDefinitions);
@@ -50,7 +54,8 @@ if(options.interactive) {
         namespace,
         specialCharacter,
         maxPasswordLength,
-        copyToClipboard
+        copyToClipboard,
+        quiet
     } = options;
     if(!secret) {
         runInteractive();
@@ -61,8 +66,13 @@ if(options.interactive) {
     if(!generatedPassword) {
         throw new Error('Failed to generate password');
     }
-    if(copyToClipboard) {
+
+    // copy to clipboard if in quiet mode because otherwise the password is useless
+    if(copyToClipboard || quiet) {
         copyPassword(generatedPassword);
     }
-    print(generatedPassword);
+    
+    if(!quiet) {
+        print(generatedPassword);
+    }
 }
